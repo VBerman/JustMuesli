@@ -78,19 +78,47 @@ namespace JustMuesli.Pages
         private void StackPanel_Drop(object sender, DragEventArgs e)
         {
 
-            var a = e.Data.GetData(typeof(Muesli)) as Muesli;
+            var draggedMuesli = (e.Data.GetData(typeof(SendData)) as SendData).Muesli;
+            if (draggedMuesli.TypeId == 1)
+            {
+                UsedMueslis.Remove(UsedMueslis[12]);
+                UsedMueslis.Insert(12, new UsedMuesli() { Muesli = draggedMuesli });
+
+            }
+            else
+            {
+                var usedMuesli = (sender as StackPanel).DataContext as UsedMuesli;
+                if (usedMuesli.Muesli != null)
+                {
+                    var rangeToTop = UsedMueslis.ToList().GetRange(0, UsedMueslis.IndexOf(usedMuesli) + 1);
+                    rangeToTop.RemoveAt(0);
+                    rangeToTop.Add(usedMuesli);
+
+                    var usedMueslis = UsedMueslis.ToList();
+                    usedMueslis.RemoveRange(0, UsedMueslis.IndexOf(usedMuesli) + 1);
+                    usedMueslis.InsertRange(0, rangeToTop);
+
+                    UsedMueslis = new ObservableCollection<UsedMuesli>(usedMueslis.ToList());
+
+                }
+                UsedMueslis.Remove(usedMuesli);
+                UsedMueslis.Insert(UsedMueslis.IndexOf(usedMuesli), new UsedMuesli() { Muesli = draggedMuesli });
+
+            }
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
             var itemDrag = sender as Border;
-            Muesli data = itemDrag.DataContext as Muesli;
-            DragDrop.DoDragDrop(itemDrag, data, DragDropEffects.Move);
+            Muesli muesli = itemDrag.DataContext as Muesli;
+            var sendData = new SendData() { Muesli = muesli };
+            DragDrop.DoDragDrop(itemDrag, sendData, DragDropEffects.Move);
         }
 
-        private void StackPanel_DragEnter(object sender, DragEventArgs e)
+        private class SendData
         {
-            e.Effects = DragDropEffects.Move;
+            public Muesli Muesli { get; set; }
         }
+
     }
 }

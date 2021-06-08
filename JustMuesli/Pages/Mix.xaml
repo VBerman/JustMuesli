@@ -86,7 +86,7 @@
                         <ItemsControl.ItemTemplate>
                             
                             <DataTemplate>
-                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" AllowDrop="True" Drop="StackPanel_Drop" DragEnter="StackPanel_DragEnter"> 
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" AllowDrop="True" Drop="StackPanel_Drop" > 
                                     <Button Height="20" Width="70" Margin="1" Content="{Binding Muesli.PortionSize, StringFormat={}{0}g}"/>
                                     <TextBlock Margin="5 0 0 0" Text="{Binding Muesli.NameEN, FallbackValue='> empty'}"/>
                                 </StackPanel>
