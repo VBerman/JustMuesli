@@ -18,7 +18,7 @@ namespace JustMuesli.Helpers
 
             var resultList = new List<ValidationResult>();
 
-            var a = Validator.TryValidateObject(instance, new ValidationContext(instance), resultList, true);
+            Validator.TryValidateObject(instance, new ValidationContext(instance), resultList, true);
             return string.Join("\n", resultList); 
 
         }

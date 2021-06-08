@@ -1,5 +1,4 @@
-﻿using JustMuesli.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,23 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace JustMuesli
+namespace JustMuesli.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Interaction logic for Details.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Details : Window
     {
-        public MainWindow()
+        public Details()
         {
             InitializeComponent();
-            
-            MainFrame.Navigate(new Pages.Menu());
-           
-
         }
     }
 }

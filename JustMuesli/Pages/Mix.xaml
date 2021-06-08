@@ -69,13 +69,13 @@
             </TabControl.ContentTemplate>
         </TabControl>
         <Border CornerRadius="10" BorderThickness="1" BorderBrush="Black" Grid.Column="1" Margin="10 0 0 0">
-            <Grid>
+            <Grid Margin="10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="40"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="60"/>
                 </Grid.RowDefinitions>
                 <Grid VerticalAlignment="Center" Grid.Row="0">
                     <Label Content="Name"/>
@@ -88,14 +88,25 @@
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" AllowDrop="True" Drop="StackPanel_Drop" MouseDown="StackPanel_MouseDown">
                                     
-                                    <Button Height="20" Width="70" Margin="1" ClickMode="Hover" Content="{Binding Muesli.PortionSize}" ContentStringFormat="{}{0}g"/>
+                                    <Button Height="20" Width="70" Margin="1" ClickMode="Hover" Content="{Binding Muesli.ActualSize}" ContentStringFormat="{}{0}g"/>
                                     <TextBlock Margin="5 0 0 0" Text="{Binding Muesli.NameEN, FallbackValue='> empty'}"/>
                                 </StackPanel>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
                 </ScrollViewer>
-
+                <Label Content=""/>
+                <TextBlock Grid.Row="2" >
+                    <TextBlock.Text>
+                        <MultiBinding StringFormat="{}{0:0.00} / 600g&#10;{1:0} kcal / 100g">
+                            <Binding Path="Price"/>
+                            <Binding Path="Nutritional"/>
+                        </MultiBinding>
+                    </TextBlock.Text>
+                </TextBlock>
+                <Button Content="details" Grid.Row="2" HorizontalAlignment="Right" Width="75"/>
+                <Button Content="back to menu" Grid.Row="3" Height="30" Click="BackToMenu"/>
+                <Button Content="Save Muesli" Grid.Row="4" Height="50" Click="SaveMuesli"/>
             </Grid>
         </Border>
     </Grid>

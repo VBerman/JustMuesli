@@ -1,12 +1,16 @@
-﻿<Window x:Class="JustMuesli.MainWindow"
+﻿<Window x:Class="JustMuesli.Windows.Details"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:JustMuesli"
+        xmlns:local="clr-namespace:JustMuesli.Windows"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800">
-    <Grid Background="Moccasin">
-        <Frame Name="MainFrame" NavigationUIVisibility="Hidden" Padding="15"></Frame>
+        Title="Details" Height="450" Width="800">
+    <Grid>
+        <DataGrid>
+            <DataGrid.Columns>
+                
+            </DataGrid.Columns>
+        </DataGrid> 
     </Grid>
 </Window>

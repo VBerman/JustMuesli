@@ -67,6 +67,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Windows\Details.xaml.cs">
+      <DependentUpon>Details.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -100,6 +103,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\Details.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Country.cs" />
@@ -111,6 +118,7 @@
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderMuesli.cs" />
     <Compile Include="Models\Partial\DBPartial.cs" />
+    <Compile Include="Models\Partial\MuesliPartial.cs" />
     <Compile Include="Models\Type.cs" />
     <Compile Include="Models\UsedMuesli.cs" />
     <Compile Include="Models\User.cs" />

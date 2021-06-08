@@ -10,11 +10,7 @@
 
     <Grid>
         <Label>
-            <Label.Content>
-                <MultiBinding>
-                    <Binding Path="ads"/>
-                </MultiBinding>
-            </Label.Content>
+            
         </Label>
     </Grid>
 </Page>
