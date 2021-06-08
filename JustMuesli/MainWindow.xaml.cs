@@ -24,6 +24,8 @@ namespace JustMuesli
         public MainWindow()
         {
             InitializeComponent();
+            DB.Instanse.Muesli.ToList()[0].sad = 123;
+            
             MainFrame.Navigate(new Pages.Menu());
            
 

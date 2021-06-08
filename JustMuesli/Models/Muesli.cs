@@ -1,5 +1,6 @@
 namespace JustMuesli.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -46,5 +47,7 @@ namespace JustMuesli.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UsedMuesli> UsedMuesli { get; set; }
+
+        public int sad { get; set; }
     }
 }

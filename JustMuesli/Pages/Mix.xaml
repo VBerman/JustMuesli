@@ -82,12 +82,13 @@
                     <TextBox Width="150" Height="20" Text="{Binding CurrentMuesli.Name}"/>
                 </Grid>
                 <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Row="1">
-                    <ItemsControl ItemsSource="{Binding UsedMueslis}" >
+                    <ItemsControl ItemsSource="{Binding UsedMueslis}" Name="Mueslis">
                         <ItemsControl.ItemTemplate>
                             
                             <DataTemplate>
-                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" AllowDrop="True" Drop="StackPanel_Drop" > 
-                                    <Button Height="20" Width="70" Margin="1" Content="{Binding Muesli.PortionSize, StringFormat={}{0}g}"/>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" AllowDrop="True" Drop="StackPanel_Drop" MouseDown="StackPanel_MouseDown">
+                                    
+                                    <Button Height="20" Width="70" Margin="1" ClickMode="Hover" Content="{Binding Muesli.PortionSize}" ContentStringFormat="{}{0}g"/>
                                     <TextBlock Margin="5 0 0 0" Text="{Binding Muesli.NameEN, FallbackValue='> empty'}"/>
                                 </StackPanel>
                             </DataTemplate>
