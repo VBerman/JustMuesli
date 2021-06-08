@@ -35,9 +35,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -91,6 +102,17 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\CreatedMuesli.cs" />
+    <Compile Include="Models\DB.cs" />
+    <Compile Include="Models\Ingredient.cs" />
+    <Compile Include="Models\Muesli.cs" />
+    <Compile Include="Models\MuesliIngredient.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderMuesli.cs" />
+    <Compile Include="Models\Partial\DBPartial.cs" />
+    <Compile Include="Models\Type.cs" />
+    <Compile Include="Models\UsedMuesli.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Pages\EditCustomerDetails.xaml.cs">
       <DependentUpon>EditCustomerDetails.xaml</DependentUpon>
@@ -124,6 +146,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -32,7 +32,14 @@ namespace JustMuesli.Pages
         private void SaveClick(object sender, RoutedEventArgs e)
         {
             var result = User.Save();
-            
+            if (result != "")
+            {
+                MessageBox.Show("Error:" + "\n" + result);
+            }
+            else
+            {
+                MessageBox.Show("Success");
+            }
         }
 
         private void BackClick(object sender, RoutedEventArgs e)

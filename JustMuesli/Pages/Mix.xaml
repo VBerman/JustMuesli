@@ -6,9 +6,96 @@
       xmlns:local="clr-namespace:JustMuesli.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Mix">
+      Title="Mix"
+      Name="MixName"
+      >
 
-    <Grid>
+    <Grid DataContext="{Binding ElementName=MixName, Path=.}">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="275"/>
+        </Grid.ColumnDefinitions>
         
+        <TabControl ItemsSource="{Binding Types}" DisplayMemberPath="Name" Grid.Column="0">
+            
+            <TabControl.ContentTemplate>
+                <DataTemplate>
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        
+                    <ItemsControl ItemsSource="{Binding Muesli}" >
+                       
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border Margin="1" BorderBrush="Black" BorderThickness="1" MouseDown="Border_MouseDown">
+                                <Grid Margin="3" >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition Width="*"/>
+                                        
+                                    </Grid.ColumnDefinitions>
+                                        <Image Width="80" Height="80" Grid.Column="0"/>
+                                        <TextBlock Text="{Binding NameEN}" Grid.Column="1"/>
+                                        
+                                    
+                                        <StackPanel Grid.Column="1" VerticalAlignment="Bottom">
+                        
+                                            <TextBlock>
+                                                <TextBlock.Text>
+                                                    <MultiBinding StringFormat="{}Fr. {0:0.00} / {1}g">
+                                                        <Binding Path="Price"/>
+                                                        <Binding Path="PortionSize"/>
+                                                    </MultiBinding>
+                                                </TextBlock.Text>
+                                            </TextBlock>
+                                            
+                                            <TextBlock>
+                                                <Hyperlink>more information</Hyperlink>
+                                            </TextBlock>
+                                        </StackPanel>
+                                       
+
+                                        <TextBlock HorizontalAlignment="Right" Grid.Column="1" VerticalAlignment="Bottom">
+                                            <Hyperlink Click="AddToMuesli">add to muesli</Hyperlink>
+                                        </TextBlock>
+                                                    
+                                </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                    </ScrollViewer>
+                </DataTemplate>
+            </TabControl.ContentTemplate>
+        </TabControl>
+        <Border CornerRadius="10" BorderThickness="1" BorderBrush="Black" Grid.Column="1" Margin="10 0 0 0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Grid VerticalAlignment="Center" Grid.Row="0">
+                    <Label Content="Name"/>
+                    <TextBox Width="150" Height="20" Text="{Binding CurrentMuesli.Name}"/>
+                </Grid>
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Row="1">
+                    <ItemsControl ItemsSource="{Binding UsedMueslis}" >
+                        <ItemsControl.ItemTemplate>
+                            
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" AllowDrop="True" Drop="StackPanel_Drop" DragEnter="StackPanel_DragEnter"> 
+                                    <Button Height="20" Width="70" Margin="1" Content="{Binding Muesli.PortionSize, StringFormat={}{0}g}"/>
+                                    <TextBlock Margin="5 0 0 0" Text="{Binding Muesli.NameEN, FallbackValue='> empty'}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+
+            </Grid>
+        </Border>
     </Grid>
 </Page>
