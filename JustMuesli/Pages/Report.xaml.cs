@@ -1,7 +1,4 @@
-﻿using JustMuesli.Helpers;
-using JustMuesli.Models;
-using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,23 +13,28 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace JustMuesli
+namespace JustMuesli.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Interaction logic for Report.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Report : Page
     {
-        public MainWindow()
+        public Report(Models.Order order)
         {
-            
 
             InitializeComponent();
+            Order.Content = new Pages.Order(visibilityButton: true, order: order);
+            ContactInfo.Content = new EditCustomerDetails(true);
 
-            MainFrame.Navigate(new Pages.Menu());
+            
 
 
+        }
 
+        private void BackButtonClick(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Menu());
         }
     }
 }

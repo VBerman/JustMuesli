@@ -58,7 +58,7 @@ namespace JustMuesli.Models
 
                     return JsonConvert.DeserializeObject<User>(stringUser);
                 }
-                catch (Exception)
+                    catch (Exception ex)
                 {
                     return new User();
                     

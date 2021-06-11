@@ -67,6 +67,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Helpers\DictionaryContainer.cs" />
+    <Compile Include="Helpers\ElementLanguage.cs" />
+    <Compile Include="Helpers\ObservableObject.cs" />
+    <Compile Include="Helpers\RefreshLanguage.cs" />
+    <Compile Include="Models\DetailsRow.cs" />
+    <Compile Include="Models\Partial\CreatedMuesliPartial.cs" />
+    <Compile Include="Models\Partial\OrderMuesliPartial.cs" />
+    <Compile Include="Models\Partial\OrderPartial.cs" />
+    <Compile Include="Pages\Report.xaml.cs">
+      <DependentUpon>Report.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Details.xaml.cs">
       <DependentUpon>Details.xaml</DependentUpon>
     </Compile>
@@ -100,6 +111,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Order.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Report.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -151,7 +166,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />

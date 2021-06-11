@@ -16,7 +16,7 @@ namespace JustMuesli.Models
         [NotMapped]
         public int ActualSize
         {
-            get { return PortionSize == 600 ? actualSize : PortionSize; }
+            get { return PortionSize == 600 ? (actualSize == 0 ? 600 : actualSize) : PortionSize; }
             set
             {
                 actualSize = value;
@@ -34,5 +34,7 @@ namespace JustMuesli.Models
 
         public decimal CarbohydrateCalculate { get => (decimal)((double)ActualSize / 100 * Carbohydrates * 4.1); }
         public decimal FatCalculate { get => (decimal)((double)ActualSize / 100 * Fat * 9.3); }
+
+        
     }
 }

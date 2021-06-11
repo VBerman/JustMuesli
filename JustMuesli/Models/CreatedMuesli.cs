@@ -35,3 +35,4 @@ namespace JustMuesli.Models
         public virtual ICollection<UsedMuesli> UsedMuesli { get; set; }
     }
 }
+    

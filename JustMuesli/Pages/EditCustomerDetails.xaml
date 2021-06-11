@@ -31,7 +31,7 @@
         </Grid.ColumnDefinitions>
         <Label Grid.Row="0" Content="Customer Details" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
 
-        <Label Content="Name" Grid.Row="1" VerticalAlignment="Center"/>
+        <Label Content="Name" Name="NameLabel" Grid.Row="1" VerticalAlignment="Center"/>
         <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding User.Name}" />
 
         <Label Content="Address" Grid.Row="2"  VerticalAlignment="Center"/>
@@ -59,8 +59,8 @@
         
 
         <Grid Grid.Row="7" Grid.ColumnSpan="2">
-            <Button Content="Save" Click="SaveClick" HorizontalAlignment="Left" />
-            <Button Content="back to menu" Click="BackClick" HorizontalAlignment="Right"/>
+            <Button Content="Save" Name="Save" Click="SaveClick" HorizontalAlignment="Left" />
+            <Button Content="back to menu" Name="Back" Click="BackClick" HorizontalAlignment="Right"/>
         </Grid>
 
 

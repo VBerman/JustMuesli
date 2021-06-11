@@ -1,4 +1,5 @@
-﻿using JustMuesli.Models;
+﻿using JustMuesli.Helpers;
+using JustMuesli.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,12 +22,18 @@ namespace JustMuesli.Pages
     /// </summary>
     public partial class EditCustomerDetails : Page
     {
-
+        public List<Country> Countries { get; set; } = DB.Instanse.Country.ToList();
         public User User { get; set; } = User.Load();
 
-        public EditCustomerDetails()
+        public EditCustomerDetails(bool visibilityButton = false)
         {
             InitializeComponent();
+            RefreshLanguage.Refresh<Page>(this);
+            if (visibilityButton)
+            {
+                Back.Visibility = Visibility.Hidden;
+                Save.Visibility = Visibility.Hidden;
+            }
         }
 
         private void SaveClick(object sender, RoutedEventArgs e)

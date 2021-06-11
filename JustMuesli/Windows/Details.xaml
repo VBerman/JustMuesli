@@ -5,11 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JustMuesli.Windows"
         mc:Ignorable="d"
-        Title="Details" Height="450" Width="800">
-    <Grid>
-        <DataGrid>
+        Title="Details" Height="450" Width="800"
+        Name="DetailsName">
+    <Grid DataContext="{Binding ElementName=DetailsName}">
+        <DataGrid Name="DataGridName" ItemsSource="{Binding DetailsRows}" IsReadOnly="True" AutoGenerateColumns="False" ColumnWidth="*">
             <DataGrid.Columns>
-                
+                <DataGridTextColumn Header="Nutrient" Binding="{Binding Nutrient}"/>
+                <DataGridTextColumn Header="Kcal" Binding="{Binding Kcal, StringFormat={}{0:0.00}}"/>
+                <DataGridTextColumn Header="KJ" Binding="{Binding KJ, StringFormat={}{0:0.00}}"/>
             </DataGrid.Columns>
         </DataGrid> 
     </Grid>

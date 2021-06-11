@@ -1,4 +1,6 @@
-﻿using JustMuesli.Models;
+﻿using JustMuesli.Helpers;
+using JustMuesli.Models;
+using JustMuesli.Windows;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -42,8 +44,16 @@ namespace JustMuesli.Pages
         public Mix(CreatedMuesli createdMuesli = null)
         {
             CurrentMuesli = createdMuesli ?? new CreatedMuesli();
-            UsedMueslis = new ObservableCollection<UsedMuesli>(CurrentMuesli.UsedMuesli.Count != 0 ? CurrentMuesli.UsedMuesli.ToList() : Enumerable.Range(0, 13).Select(x => new UsedMuesli()));
+            //CurrentMuesli.UsedMuesli.ToList()
 
+            var usedMueslisCopy = new List<UsedMuesli>();
+
+            usedMueslisCopy.AddRange(Enumerable.Range(0, 13 - CurrentMuesli.UsedMuesli.Count).Select(x => new UsedMuesli()));
+            usedMueslisCopy.AddRange(CurrentMuesli.UsedMuesli.ToList());
+            UsedMueslis = new ObservableCollection<UsedMuesli>(usedMueslisCopy);
+            CalculateBaseWeight();
+            CalculateNutritional();
+            CalculatePrice();
             InitializeComponent();
         }
 
@@ -226,11 +236,69 @@ namespace JustMuesli.Pages
 
         private void BackToMenu(object sender, RoutedEventArgs e)
         {
-            NavigationService.GoBack();
+            NavigationService.Navigate(new Menu());
         }
 
         private void SaveMuesli(object sender, RoutedEventArgs e)
         {
+            CurrentMuesli.UsedMuesli = UsedMueslis.Where(um => um.Muesli != null).ToList();
+            CurrentMuesli.Price = Price;
+            var resultValidate = ValidationHelper.Validate<CreatedMuesli>(CurrentMuesli);
+
+            if (resultValidate == "")
+            {
+                try
+                {
+                    CurrentMuesli.CreatedOn = DateTime.Now;
+                    if (CurrentMuesli.Id == 0)
+                    {
+                        DB.Instanse.CreatedMuesli.Add(CurrentMuesli);
+
+                    }
+                    DB.Instanse.SaveChanges();
+                    MessageBox.Show("Success save");
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("Not success");
+                }
+            }
+            else
+            {
+                MessageBox.Show(resultValidate);
+            }
+
+        }
+
+        private void DetailsOpen(object sender, RoutedEventArgs e)
+        {
+
+
+            var carbohydratesRow = new DetailsRow() { Nutrient = "Carbohydrates" };
+            var proteinsRow = new DetailsRow() { Nutrient = "Proteins" };
+            var fatsRow = new DetailsRow() { Nutrient = "Fats" };
+            foreach (var item in UsedMueslis)
+            {
+                if (item.Muesli != null)
+                {
+                    carbohydratesRow.Kcal += item.Muesli.CarbohydrateCalculate / 6;
+                    proteinsRow.Kcal += item.Muesli.ProteinCalculate / 6;
+                    fatsRow.Kcal = item.Muesli.FatCalculate / 6;
+
+                }
+            }
+            carbohydratesRow.KJ = carbohydratesRow.Kcal * (decimal)4.184;
+            proteinsRow.KJ = proteinsRow.Kcal * (decimal)4.184;
+            fatsRow.KJ = fatsRow.Kcal * (decimal)4.184;
+            var rows = new List<DetailsRow>()
+            {
+                carbohydratesRow,
+                proteinsRow,
+                fatsRow
+            };
+
+            new Details(rows).Show();
 
         }
     }

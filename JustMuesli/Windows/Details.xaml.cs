@@ -1,5 +1,7 @@
-﻿using System;
+﻿using JustMuesli.Models;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +21,14 @@ namespace JustMuesli.Windows
     /// </summary>
     public partial class Details : Window
     {
-        public Details()
+
+        public ObservableCollection<DetailsRow> DetailsRows { get; set; }
+        public Details(List<DetailsRow> detailsRows)
         {
+            
+            DetailsRows = new ObservableCollection<DetailsRow>(detailsRows);
             InitializeComponent();
+            
         }
     }
 }
