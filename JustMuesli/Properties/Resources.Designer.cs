@@ -62,10 +62,25 @@ namespace JustMuesli.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to [
-        /// {&quot;NameElement&quot;:&quot;NameLabel&quot;,
-        ///    &quot;Translations&quot;:{&quot;NameEn&quot;:&quot;Sad&quot;, &quot;NameRu&quot;:&quot;Sadd&quot;}
-        ///  }
-        ///].
+        /// {
+        ///    &quot;NameElement&quot;:&quot;NameLabel&quot;,
+        ///    &quot;Translations&quot;:{&quot;NameEn&quot;:&quot;Name&quot;, &quot;NameBy&quot;:&quot;Імя&quot;}
+        ///  },
+        ///  {
+        ///    &quot;NameElement&quot;:&quot;AddressLabel&quot;,
+        ///    &quot;Translations&quot;:{&quot;NameEn&quot;:&quot;Address&quot;, &quot;NameBy&quot;:&quot;Адрас&quot;}
+        ///  },
+        ///  {
+        ///    &quot;NameElement&quot;:&quot;ZipCityLabel&quot;,
+        ///    &quot;Translations&quot;:{&quot;NameEn&quot;:&quot;Zip/City&quot;, &quot;NameBy&quot;:&quot;Паштовы індэкс/Горад&quot;}
+        ///  },
+        ///  {
+        ///    &quot;NameElement&quot;:&quot;CountryLabel&quot;,
+        ///    &quot;Translations&quot;:{&quot;NameEn&quot;:&quot;Country&quot;, &quot;NameBy&quot;:&quot;Краіна&quot;}
+        ///  },
+        ///  {
+        ///    &quot;NameElement&quot;:&quot;PhoneLabel&quot;,
+        ///    &quot;Translations&quot;:{&quot;NameEn&quot;:&quot;Phone&quot;, &quot;Name [rest of string was truncated]&quot;;.
         /// </summary>
         public static string LanguageDictionary {
             get {

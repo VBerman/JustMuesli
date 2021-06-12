@@ -28,7 +28,7 @@ namespace JustMuesli.Pages
         public EditCustomerDetails(bool visibilityButton = false)
         {
             InitializeComponent();
-            RefreshLanguage.Refresh<Page>(this);
+            RefreshLanguage.Refresh(this);
             if (visibilityButton)
             {
                 Back.Visibility = Visibility.Hidden;

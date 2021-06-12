@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JustMuesli.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace JustMuesli.Pages
         public Menu()
         {
             InitializeComponent();
+            RefreshLanguage.Refresh(this);
         }
 
         private void ButtonEditCustomerDetailsOpen(object sender, RoutedEventArgs e)
@@ -50,6 +52,16 @@ namespace JustMuesli.Pages
             Environment.Exit(0); 
         }
 
-        
+        private void EnRadioButtonClick(object sender, RoutedEventArgs e)
+        {
+            DictionaryContainer.CurrentLanguage = "NameEn";
+            RefreshLanguage.Refresh(this);
+        }
+
+        private void ByRadioButtonClick(object sender, RoutedEventArgs e)
+        {
+            DictionaryContainer.CurrentLanguage = "NameBy";
+            RefreshLanguage.Refresh(this);
+        }
     }
 }

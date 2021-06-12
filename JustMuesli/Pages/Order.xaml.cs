@@ -1,4 +1,5 @@
-﻿using JustMuesli.Models;
+﻿using JustMuesli.Helpers;
+using JustMuesli.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -48,6 +49,7 @@ namespace JustMuesli.Pages
 
             }
             InitializeComponent();
+            RefreshLanguage.Refresh(this);
             if (visibilityButton)
             {
                 Back.Visibility = Visibility.Hidden;

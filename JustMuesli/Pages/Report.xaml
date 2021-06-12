@@ -14,6 +14,6 @@
             <Frame Name="ContactInfo" IsEnabled="False"/>
             
         </UniformGrid>
-        <Button Content="Back to menu" Click="BackButtonClick" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+        <Button Content="Back to menu" Click="BackButtonClick" Name="BackToMenuButton" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
     </Grid>
 </Page>

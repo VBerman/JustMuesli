@@ -16,18 +16,18 @@
         </Grid.RowDefinitions>
       
         <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
-            
-            <RadioButton GroupName="Language" Content="English"/>
-            <RadioButton GroupName="Language" Content="Rus" Margin="15 0 15 0"/>
+
+            <RadioButton GroupName="Language" IsChecked="True" Content="English" Click="EnRadioButtonClick"/>
+            <RadioButton GroupName="Language" Content="беларускі" Margin="15 0 15 0" Click="ByRadioButtonClick"/>
 
         </StackPanel>
         <StackPanel Grid.Row="2">
-            
-            <Button Content="Edit Customer Details" Click="ButtonEditCustomerDetailsOpen"/>
-            <Button Content="Mix" Click="ButtonMixOpen"/>
-            <Button Content="my muesli mixes" Click="ButtonMyMuesliMixesOpen"/>
-            <Button Content="Order" Click="ButtonOrderOpen"/>
-            <Button Content="Exit" Click="ButtonExit"/>
+
+            <Button Content="Edit Customer Details" Name="EditCustomerDetails" Click="ButtonEditCustomerDetailsOpen"/>
+            <Button Content="Mix" Name="Mix" Click="ButtonMixOpen"/>
+            <Button Content="my muesli mixes" Name="MyMuesliMixes" Click="ButtonMyMuesliMixesOpen"/>
+            <Button Content="Order" Name="Order" Click="ButtonOrderOpen"/>
+            <Button Content="Exit" Name="Exit" Click="ButtonExit"/>
         </StackPanel>
     </Grid>
 </Page>

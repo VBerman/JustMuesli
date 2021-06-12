@@ -1,4 +1,5 @@
-﻿using JustMuesli.Models;
+﻿using JustMuesli.Helpers;
+using JustMuesli.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -26,6 +27,7 @@ namespace JustMuesli.Pages
         public MyMuesliMixes()
         {
             InitializeComponent();
+            RefreshLanguage.Refresh(this);
         }
 
         private void BackToMenuButtonClick(object sender, RoutedEventArgs e)

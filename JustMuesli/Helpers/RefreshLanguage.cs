@@ -10,33 +10,42 @@ namespace JustMuesli.Helpers
 {
     public static class RefreshLanguage
     {
-        public static void Refresh<T>(T elementContainer)
+        public static void Refresh(FrameworkElement elementContainer)
         {
-            if (elementContainer.GetType().BaseType == new Window().GetType() || elementContainer.GetType().BaseType == new Page().GetType())
+
+          
+
+             
+            foreach (var item in DictionaryContainer.Elements)
             {
-                foreach (var item in DictionaryContainer.Elements)
+                var element = (elementContainer as dynamic).FindName(item.NameElement) as dynamic;
+                try
                 {
-                    var element = (elementContainer as dynamic).FindName(item.NameElement) as dynamic;
+
+                    element.Content = item.Translations[DictionaryContainer.CurrentLanguage];
+                }
+                catch (Exception)
+                {
+
                     try
                     {
-
-                        element.Content = item.Translations["NameRu"];
+                        element.Header = item.Translations[DictionaryContainer.CurrentLanguage];
                     }
                     catch (Exception)
                     {
+                        try
+                        {
 
-                       
-                    }
-                    try
-                    {
-                        element.He
-                    }
-                    catch (Exception)
-                    {
+                        element.Text = item.Translations[DictionaryContainer.CurrentLanguage];
+                        }
+                        catch (Exception)
+                        {
 
-                        throw;
+                        }
                     }
                 }
+                    
+                
             }
            
         }

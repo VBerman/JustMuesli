@@ -17,6 +17,7 @@ namespace JustMuesli
     public partial class App : Application
     {
         public List<ElementLanguage> ElementLanguages { get; set; }
+        
         public App()
         {
 

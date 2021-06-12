@@ -119,9 +119,153 @@
   </resheader>
   <data name="LanguageDictionary" xml:space="preserve">
     <value>[
- {"NameElement":"NameLabel",
-    "Translations":{"NameEn":"Sad", "NameRu":"Sadd"}
+ {
+    "NameElement":"NameLabel",
+    "Translations":{"NameEn":"Name", "NameBy":"Імя"}
+  },
+  {
+    "NameElement":"AddressLabel",
+    "Translations":{"NameEn":"Address", "NameBy":"Адрас"}
+  },
+  {
+    "NameElement":"ZipCityLabel",
+    "Translations":{"NameEn":"Zip/City", "NameBy":"Паштовы індэкс/Горад"}
+  },
+  {
+    "NameElement":"CountryLabel",
+    "Translations":{"NameEn":"Country", "NameBy":"Краіна"}
+  },
+  {
+    "NameElement":"PhoneLabel",
+    "Translations":{"NameEn":"Phone", "NameBy":"Тэлефон"}
+  },
+  {
+    "NameElement":"EmailLabel",
+    "Translations":{"NameEn":"Email", "NameBy":"Электронная пошта"}
+  },
+  {
+    "NameElement":"Save",
+    "Translations":{"NameEn":"Save", "NameBy":"Захаваць"}
+  },
+  {
+    "NameElement":"Back",
+    "Translations":{"NameEn":"Back", "NameBy":"Назад"}
+  },
+  {
+    "NameElement":"EditCustomerDetails",
+    "Translations":{"NameEn":"Edit customer details", "NameBy":"Рэдагаваць дадзеныя кліента"}
+  },
+  {
+    "NameElement":"Mix",
+    "Translations":{"NameEn":"Mix", "NameBy":"Змяшайце"}
+  },
+  {
+    "NameElement":"MyMuesliMixes",
+    "Translations":{"NameEn":"my muesli mixes", "NameBy":"мае мюслі сумесі"}
+  },
+  {
+    "NameElement":"Order",
+    "Translations":{"NameEn":"Order", "NameBy":"Парадак"}
+  },
+  {
+    "NameElement":"Details",
+    "Translations":{"NameEn":"details", "NameBy":"дэталі"}
+  },
+  {
+    "NameElement":"BackToMenuButton",
+    "Translations":{"NameEn":"back to menu", "NameBy":"вярнуцца да меню"}
+  },
+  {
+    "NameElement":"SaveMuesliButton",
+    "Translations":{"NameEn":"Save Muesli", "NameBy":"Выратуйце Мюслі"}
+  },
+  {
+    "NameElement":"PriceColumn",
+    "Translations":{"NameEn":"price / 600g", "NameBy":"цана / 600г"}
+  },
+  {
+    "NameElement":"CreatedOn",
+    "Translations":{"NameEn":"Created on", "NameBy":"Створана далей"}
+  },
+  {
+    "NameElement":"EditButton",
+    "Translations":{"NameEn":"edit", "NameBy":"рэдагаваць"}
+  },
+  {
+    "NameElement":"DeleteButton",
+    "Translations":{"NameEn":"delete", "NameBy":"выдаліць"}
+  },
+  {
+    "NameElement":"MuesliLabel",
+    "Translations":{"NameEn":"Muesli", "NameBy":"Мюслі"}
+  },
+  {
+    "NameElement":"ShippingLabel",
+    "Translations":{"NameEn":"Shipping", "NameBy":"Дастаўка"}
+  },
+  {
+    "NameElement":"TaxesLabel",
+    "Translations":{"NameEn":"Taxes", "NameBy":"Падаткі"}
+  },
+  {
+    "NameElement":"GrandTotalLabel",
+    "Translations":{"NameEn":"Grand Total", "NameBy":"Усяго"}
+  },
+  {
+    "NameElement":"Size",
+    "Translations":{"NameEn":"Size", "NameBy":"Памер"}
+  },
+  {
+    "NameElement":"Price",
+    "Translations":{"NameEn":"Price", "NameBy":"Кошт"}
+  },
+  {
+    "NameElement":"Quantity",
+    "Translations":{"NameEn":"Quantity", "NameBy":"Колькасць"}
+  },
+  {
+    "NameElement":"Total",
+    "Translations":{"NameEn":"Total", "NameBy":"Усяго"}
+  },
+  {
+    "NameElement":"Submit",
+    "Translations":{"NameEn":"submit order", "NameBy":"прадставіць заказ"}
+  },
+  {
+    "NameElement":"Nutrient",
+    "Translations":{"NameEn":"Nutrient", "NameBy":"Пажыўныя рэчывы"}
+  },
+  {
+    "NameElement":"Kcal",
+    "Translations":{"NameEn":"Kcal", "NameBy":"Ккал"}
+  },
+  {
+    "NameElement":"KJ",
+    "Translations":{"NameEn":"KJ", "NameBy":"KJ"}
+  },
+  {
+    "NameElement":"MoreInformationLabel",
+    "Translations":{"NameEn":"more information", "NameBy":"дадатковая інфармацыя"}
+  },
+  {
+    "NameElement":"AddToMuesliLabel",
+    "Translations":{"NameEn":"add to muesli", "NameBy":"дадаць да мюслі"}
+  },
+  {
+    "NameElement":"Exit",
+    "Translations":{"NameEn":"Exit", "NameBy":"Выйсце"}
+  },
+  {
+    "NameElement":"Empty",
+    "Translations":{"NameEn":"&gt; empty", "NameBy":"&gt; пусты"}
   }
+  
+  
+  
+  
+  
+  
+  
 ]</value>
   </data>
 </root>

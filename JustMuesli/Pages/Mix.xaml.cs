@@ -24,7 +24,7 @@ namespace JustMuesli.Pages
     /// </summary>
     public partial class Mix : Page
     {
-
+        public static string EmptyLang { get; set; } 
         public ObservableCollection<UsedMuesli> UsedMueslis
         {
             get { return (ObservableCollection<UsedMuesli>)GetValue(UsedMueslisProperty); }
@@ -51,10 +51,12 @@ namespace JustMuesli.Pages
             usedMueslisCopy.AddRange(Enumerable.Range(0, 13 - CurrentMuesli.UsedMuesli.Count).Select(x => new UsedMuesli()));
             usedMueslisCopy.AddRange(CurrentMuesli.UsedMuesli.ToList());
             UsedMueslis = new ObservableCollection<UsedMuesli>(usedMueslisCopy);
+            EmptyLang = DictionaryContainer.Elements.FirstOrDefault(e => e.NameElement == "Empty")?.Translations[DictionaryContainer.CurrentLanguage];
             CalculateBaseWeight();
             CalculateNutritional();
             CalculatePrice();
             InitializeComponent();
+            RefreshLanguage.Refresh(this);
         }
 
         private void AddToMuesli(object sender, RoutedEventArgs e)

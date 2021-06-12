@@ -9,6 +9,7 @@ namespace JustMuesli.Helpers
 {
     public class DictionaryContainer
     {
+        public static string CurrentLanguage { get; set; } = "NameEn";
         public static List<ElementLanguage> elements;
         public static List<ElementLanguage> Elements
         {

@@ -16,16 +16,17 @@
         </Grid.RowDefinitions>
         <DataGrid ItemsSource="{Binding CreatedMueslis}" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*" Name="DataGrid">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Name}" Header="Name"/>
-                <DataGridTextColumn Binding="{Binding Price, StringFormat={}{0:0.00}}" Header="Price / 600 g"/>
-                <DataGridTextColumn Binding="{Binding CreatedOn, StringFormat={}{0:dd/MM/yyyy}}" Header="Created on"/>
+                <DataGridTextColumn Binding="{Binding Name}" x:Name="NameLabel" Header="Name"/>
+                <DataGridTextColumn Binding="{Binding Price, StringFormat={}{0:0.00}}" x:Name="PriceColumn" Header="Price / 600 g"/>
+                <DataGridTextColumn Binding="{Binding CreatedOn, StringFormat={}{0:dd/MM/yyyy}}" x:Name="CreatedOn" Header="Created on"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button  Content="back to menu" Click="BackToMenuButtonClick" Grid.Row="1" HorizontalAlignment="Left"/>
+        <Button Name="BackToMenuButton" Content="back to menu" Click="BackToMenuButtonClick" Grid.Row="1" HorizontalAlignment="Left"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="1">
-            <Button Content="edit" Click="EditButtonClick"/>
-            <Button Content="delete" Click="DeleteButtonClick"/>
+            <Button Content="edit" Name="EditButton" Click="EditButtonClick"/>
+            <Button Content="delete" Name="DeleteButton" Click="DeleteButtonClick"/>
         </StackPanel>
+
     </Grid>
     
     

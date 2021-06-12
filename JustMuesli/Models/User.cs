@@ -41,6 +41,7 @@ namespace JustMuesli.Models
         [MinLength(10)]
         [Phone]
         [Required]
+        [MyValidation]
         public string Phone { get; set; }
 
         [EmailAddress]

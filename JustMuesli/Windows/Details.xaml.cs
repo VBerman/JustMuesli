@@ -1,4 +1,5 @@
-﻿using JustMuesli.Models;
+﻿using JustMuesli.Helpers;
+using JustMuesli.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -28,7 +29,7 @@ namespace JustMuesli.Windows
             
             DetailsRows = new ObservableCollection<DetailsRow>(detailsRows);
             InitializeComponent();
-            
+            RefreshLanguage.Refresh(this);
         }
     }
 }

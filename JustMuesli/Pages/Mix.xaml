@@ -16,11 +16,13 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="275"/>
         </Grid.ColumnDefinitions>
-        
+        <Label IsEnabled="False" Panel.ZIndex="-100" Name="MoreInformationLabel" Visibility="Collapsed"/>
+        <Label IsEnabled="False" Panel.ZIndex="-100" Name="AddToMuesliLabel" Visibility="Collapsed"/>
         <TabControl ItemsSource="{Binding Types}" DisplayMemberPath="Name" Grid.Column="0">
             
             <TabControl.ContentTemplate>
                 <DataTemplate>
+                    
                     <ScrollViewer VerticalScrollBarVisibility="Auto">
                         
                     <ItemsControl ItemsSource="{Binding Muesli}" >
@@ -50,14 +52,16 @@
                                             </TextBlock>
                                             
                                             <TextBlock>
-                                                <Hyperlink>more information</Hyperlink>
+                                                <Hyperlink><TextBlock Text="{Binding ElementName=MoreInformationLabel, Path=Content}"/></Hyperlink>
                                             </TextBlock>
                                         </StackPanel>
                                        
 
                                         <TextBlock HorizontalAlignment="Right" Grid.Column="1" VerticalAlignment="Bottom">
-                                            <Hyperlink Click="AddToMuesli">add to muesli</Hyperlink>
-                                        </TextBlock>
+                                            <Hyperlink Click="AddToMuesli">
+                                                <TextBlock Text="{Binding ElementName=AddToMuesliLabel, Path=Content}"/>
+                                            </Hyperlink>
+                                            </TextBlock>
                                                     
                                 </Grid>
                                 </Border>
@@ -80,8 +84,8 @@
              
           
                 <TextBox Width="150" Height="20" Text="{Binding CurrentMuesli.Name}" />
-                <Label Content="Name" HorizontalAlignment="Left"/>
-                
+                <Label Name="NameLabel" Content="Name" HorizontalAlignment="Left"/>
+                <Label Name="Empty" Visibility="Collapsed"/>
                 <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Row="1">
                     <ItemsControl ItemsSource="{Binding UsedMueslis}" Name="Mueslis">
                         <ItemsControl.ItemTemplate>
@@ -90,7 +94,7 @@
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" AllowDrop="True" Drop="StackPanel_Drop" MouseDown="StackPanel_MouseDown">
                                     
                                     <Button Height="20" Width="70" Margin="1" ClickMode="Hover" Content="{Binding Muesli.ActualSize}" ContentStringFormat="{}{0}g"/>
-                                    <TextBlock Margin="5 0 0 0" Text="{Binding Muesli.NameEN, FallbackValue='> empty'}"/>
+                                    <TextBlock Margin="5 0 0 0" Text="{Binding Muesli.NameEN, FallbackValue='{x:Static local:Mix.EmptyLang}'}"/>
                                 </StackPanel>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
@@ -104,9 +108,9 @@
                         </MultiBinding>
                     </TextBlock.Text>
                 </TextBlock>
-                <Button Content="details" Grid.Row="2" HorizontalAlignment="Right" Click="DetailsOpen" Width="75"/>
-                <Button Content="back to menu" Grid.Row="3" Height="30" Click="BackToMenu"/>
-                <Button Content="Save Muesli" Grid.Row="4" Height="50" Click="SaveMuesli"/>
+                <Button Content="details" Name="Details"  Grid.Row="2" HorizontalAlignment="Right" Click="DetailsOpen" Width="75"/>
+                <Button Content="back to menu" Name="BackToMenuButton" Grid.Row="3" Height="30" Click="BackToMenu"/>
+                <Button Content="Save Muesli" Name="SaveMuesliButton" Grid.Row="4" Height="50" Click="SaveMuesli"/>
             </Grid>
         </Border>
     </Grid>

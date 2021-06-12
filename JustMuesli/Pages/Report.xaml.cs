@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JustMuesli.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,17 +25,19 @@ namespace JustMuesli.Pages
         {
 
             InitializeComponent();
+            RefreshLanguage.Refresh(this);
             Order.Content = new Pages.Order(visibilityButton: true, order: order);
             ContactInfo.Content = new EditCustomerDetails(true);
 
             
-
+            
 
         }
 
         private void BackButtonClick(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Menu());
+            NavigationService.GoBack();
+            NavigationService.GoBack();
         }
     }
 }

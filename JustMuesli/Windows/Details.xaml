@@ -10,9 +10,9 @@
     <Grid DataContext="{Binding ElementName=DetailsName}">
         <DataGrid Name="DataGridName" ItemsSource="{Binding DetailsRows}" IsReadOnly="True" AutoGenerateColumns="False" ColumnWidth="*">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Nutrient" Binding="{Binding Nutrient}"/>
-                <DataGridTextColumn Header="Kcal" Binding="{Binding Kcal, StringFormat={}{0:0.00}}"/>
-                <DataGridTextColumn Header="KJ" Binding="{Binding KJ, StringFormat={}{0:0.00}}"/>
+                <DataGridTextColumn x:Name="Nutrient" Header="Nutrient" Binding="{Binding Nutrient}"/>
+                <DataGridTextColumn x:Name="Kcal" Header="Kcal" Binding="{Binding Kcal, StringFormat={}{0:0.00}}"/>
+                <DataGridTextColumn x:Name="KJ" Header="KJ" Binding="{Binding KJ, StringFormat={}{0:0.00}}"/>
             </DataGrid.Columns>
         </DataGrid> 
     </Grid>
